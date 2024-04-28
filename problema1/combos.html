@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="combos.css">
+    <title>Comidas</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name">
+            <button onclick="window.location.href = 'precios.html';">Verificar Precios</button>
+            <div>
+            </div>
+            <div class="phase-buttons">
+                <button onclick="showPhase(1)">Combo 1</button>
+                <button onclick="showPhase(2)">Combo 2</button>
+                <button onclick="showPhase(3)">Combo 3</button>
+            </div>
+            <form id="orderform" onsubmit="generateInvoice(); return false;">
+                <!-- Primera fase -->
+                <fieldset id="phase1">
+                    <div class="titles-container">
+                        <div class="title-container">
+                            <legend>Plato fuerte</legend>
+                            <select id="platoFuerte1">
+                                <option value="Pollo en salsa blanca con hongos">Pollo en salsa blanca con hongos</option>
+                                <option value="Costilla de cerdo agridulce">Costilla de cerdo agridulce</option>
+                                <option value="Pescado en salsa de ostiones">Pescado en salsa de ostiones</option>
+                                <option value="Beefsteack a la barbacoa">Beefsteack a la barbacoa</option>
+                            </select>
+                        </div>
+                        <div class="title-container">
+                            <legend>Opcionales:</legend>
+                            <input type="checkbox" id="opcional1_1" name="Aros de Cebolla">
+                            <label for="opcional1_1">Aros de Cebolla</label><br>
+                            <input type="checkbox" id="opcional2_1" name="Vinagreta">
+                            <label for="opcional2_1">Vinagreta</label><br>
+                            <input type="checkbox" id="opcional3_1" name="Verduras al vapor">
+                            <label for="opcional3_1">Verduras al vapor</label><br>
+                            <input type="checkbox" id="opcional4_1" name="Tortilla casera">
+                            <label for="opcional4_1">Tortilla casera</label><br>
+                            <input type="checkbox" id="opcional5_1" name="Puré nuestra tierra">
+                            <label for="opcional5_1">Puré nuestra tierra</label><br>
+                        </div>
+                        <div class="title-container">
+                            <legend>Tipo de bebida:</legend>
+                            <input type="radio" id="drink1_1" name="drink1" value="Gaseosa">
+                            <label for="drink1_1">Gaseosa</label><br>
+                            <input type="radio" id="drink2_1" name="drink1" value="Natural">
+                            <label for="drink2_1">Natural(500ml)</label><br>
+                            <input type="radio" id="drink3_1" name="drink1" value="Café negro">
+                            <label for="drink3_1">Café negro</label><br>
+                            <input type="radio" id="drink4_1" name="drink1" value="Café con leche">
+                            <label for="drink4_1">Café con leche</label><br>
+                            <input type="radio" id="drink5_1" name="drink1" value="Agua">
+                            <label for="drink5_1">Agua(250ml)</label><br>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Segunda fase -->
+                <fieldset id="phase2" style="display: none;">
+                    <div class="titles-container">
+                        <div class="title-container">
+                            <legend>Plato fuerte</legend>
+                            <select id="platoFuerte2">
+                                <option value="Pollo en salsa blanca con hongos">Estofado de ternera</option>
+                                <option value="Costilla de cerdo agridulce">Ternera a la plancha</option>
+                                <option value="Pescado en salsa de ostiones">Ternera a las brazas</option>
+                                <option value="Beefsteack a la barbacoa">Ternera a la barbacoa</option>
+                            </select>
+                        </div>
+                        <div class="title-container">
+                            <legend>Opcionales:</legend>
+                            <input type="checkbox" id="opcional1_2" name="Pan de trigo integral">
+                            <label for="opcional1_2">Pan integral</label><br>
+                            <input type="checkbox" id="opcional2_2" name="Ensalada de remolacha">
+                            <label for="opcional2_2">Ensalada</label><br>
+                            <input type="checkbox" id="opcional3_2" name="Puré de calabaza">
+                            <label for="opcional3_2">Puré calabaza</label><br>
+                            <input type="checkbox" id="opcional4_2" name="Zanahorias glaseadas">
+                            <label for="opcional4_2">Zanahorias</label><br>
+                            <input type="checkbox" id="opcional5_2" name="Puré nuestra tierra">
+                            <label for="opcional5_2">Puré nuestra tierra</label><br>
+                        </div>
+                        <div class="title-container">
+                            <legend>Tipo de bebida:</legend>
+                            <input type="radio" id="drink1_2" name="drink2" value="Vino tinto">
+                            <label for="drink1_2">Vino tinto</label><br>
+                            <input type="radio" id="drink2_2" name="drink2" value="Agua con gas">
+                            <label for="drink2_2">Agua con gas</label><br>
+                            <input type="radio" id="drink3_2" name="drink2" value="Batido de frutas">
+                            <label for="drink3_2">Batido de frutas</label><br>
+                            <input type="radio" id="drink4_2" name="drink2" value="Cerveza artesanal">
+                            <label for="drink4_2">Cerveza artesanal</label><br>
+                            <input type="radio" id="drink5_2" name="drink2" value="Agua">
+                            <label for="drink5_2">Agua(250ml)</label><br>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Tercera fase -->
+                <fieldset id="phase3" style="display: none;">
+                    <div class="titles-container">
+                        <div class="title-container">
+                            <legend>Plato fuerte</legend>
+                            <select id="platoFuerte3">
+                                <option value="Pollo en salsa blanca con hongos">Salmon al ajillo</option>
+                                <option value="Costilla de cerdo agridulce">Salmon achotado</option>
+                                <option value="Pescado en salsa de ostiones">Salmon a las brazas</option>
+                                <option value="Beefsteack a la barbacoa">Salmon la barbacoa</option>
+                            </select>
+                        </div>
+                        <div class="title-container">
+                            <legend>Opcionales:</legend>
+                            <input type="checkbox" id="opcional1_3" name="Pan de trigo integral">
+                            <label for="opcional1_3">Puré</label><br>
+                            <input type="checkbox" id="opcional2_3" name="Ensalada de remolacha">
+                            <label for="opcional2_3">Espárragos</label><br>
+                            <input type="checkbox" id="opcional3_3" name="Puré de calabaza">
+                            <label for="opcional3_3">Sopa</label><br>
+                            <input type="checkbox" id="opcional4_3" name="Zanahorias glaseadas">
+                            <label for="opcional4_3">Ensalada</label><br>
+                            <input type="checkbox" id="opcional5_3" name="Puré nuestra tierra">
+                            <label for="opcional5_3">Salsas</label><br>
+                        </div>
+                        <div class="title-container">
+                            <legend>Tipo de bebida:</legend>
+                            <input type="radio" id="drink1_3" name="drink3" value="Agua minera">
+                            <label for="drink1_3">Agua minera</label><br>
+                            <input type="radio" id="drink2_3" name="drink3" value="Té">
+                            <label for="drink2_3">Té</label><br>
+                            <input type="radio" id="drink3_3" name="drink3" value="Jugo de manzana">
+                            <label for="drink3_3">Jugo de manzana</label><br>
+                            <input type="radio" id="drink4_3" name="drink3" value="Vino tinto">
+                            <label for="drink4_3">Vino tinto</label><br>
+                            <input type="radio" id="drink5_3" name="drink3" value="Agua">
+                            <label for="drink5_3">Agua(250ml)</label><br>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="phase-buttons">
+                    <button type="submit">Comprar</button>
+                    <button type="button" onclick="cancel()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="combos.js"></script>
+</body>
+</html>

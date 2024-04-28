@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="factura.css">
+    <title>Factura</title>
+</head>
+<body>
+    <div class="invoice">
+        <h1>Factura</h1>
+        <p>Fecha y Hora: <span id="dateTime"></span></p>
+        <p>Nombre: <span id="name"></span></p>
+        <p>Plato Fuerte: <span id="platoFuerte"></span></p>
+        <p>Opcionales: <span id="opcionales"></span></p>
+        <p>Bebida: <span id="bebida"></span></p>
+        <p>Total: <span id="total"></span></p>
+        <button onclick="window.location.href = 'combos.html';">Regresar</button>
+    </div>
+    <script src="factura.js"></script>
+    <script>
+        document.getElementById('dateTime').innerText = localStorage.getItem('dateTime');
+        document.getElementById('name').innerText = localStorage.getItem('name');
+        document.getElementById('platoFuerte').innerText = localStorage.getItem('platoFuerte');
+        document.getElementById('opcionales').innerText = localStorage.getItem('opcionales');
+        document.getElementById('bebida').innerText = localStorage.getItem('bebida');
+        document.getElementById('hora').innerText = localStorage.getItem('dateTime')
+    </script>
+</body>
+</html>
+
